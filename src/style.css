@@ -1744,7 +1744,7 @@ BREAKPOINTS
 
     .image-side {
         width: auto;
-        max-width: 40%;
+        max-width: 30%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -2311,7 +2311,46 @@ Recipes Page
         margin: 1%;
     }
 
+    .image-side {
+        width: auto;
+        max-width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
 
+    .image-side img {
+        width: auto;
+        height: auto;
+    }
+    .ing-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+   
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    
+    .recipe-table,
+    .sub-recipe-table {
+        text-align: left;
+        min-width: none;
+        width: 100%;
+        height: 100%;
+        max-width: 80%;
+        margin: 1% 0;
+    }
+    .row-sm,
+    .sub-row-sm {
+        width: auto;
+        width: auto;
+        max-width: 50%;
+        font-size: 1em;
+    }
     /* *
 
     #prevBtn,

@@ -2,6 +2,9 @@ import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { useParams } from 'react-router-dom';
 import { IngredientsTable } from '../../components/IngredientsTable';
 import { IngredientsMiniTable } from '../../components/IngredientsMiniTable';
+const LazyImage = lazy(() => import('../tests/LazyImage'))
+
+
 export function RecipeView() {
 
     const { recipe_id } = useParams()
@@ -53,6 +56,13 @@ export function RecipeView() {
         console.log(recipeMini)
     }, [recipeMini, setRecipeMini])
 
+    function Loading() {
+        return (
+            <div className='loading' style={{ fontFamily: 'Lato', fontSize: '1.5em', fontWeight: '300' }}>
+                <p><i>Image loading</i></p>;
+            </div>
+        )
+    }
 
     return (
         <div className='recipe-view-container'>
@@ -66,29 +76,25 @@ export function RecipeView() {
                     </div>
                     <div className='recipe-content'>
                         {currentRecipe && ingredients &&
-
                             <>
                                 <div className='ing-section'>
                                     <IngredientsTable ingredients={ingredients} />
 
-
                                     <div className='image-side'>
-                                        <img src={currentRecipe.image} />
+                                        <Suspense fallback={<Loading />}>
+                                            <LazyImage image={currentRecipe.image} />
+                                        </Suspense>
                                     </div>
                                 </div>
                                 <div className='sub-recipe-row'>
-                                {recipeMini ?
-                                     
-                                            recipeMini.map((item) => (
-                                                <IngredientsMiniTable data={item} />
-                                               
-                                            ))
-                                         
-                                            : null}
-                                               </div>
+                                    {recipeMini ?
+                                        recipeMini.map((item) => (
+                                            <IngredientsMiniTable data={item} />
+                                        ))
+                                        : null}
+                                </div>
                                 {instructions ?
                                     <div className='instructions-section'>
-                                    
                                         <div className='instructions-section-title'>
                                             <h2>Instructions</h2>
                                         </div>
@@ -115,11 +121,9 @@ export function RecipeView() {
                             <img src={currentRecipe.image} />
                         </div>
                       */}
-
                     </div>
                 </div>
             }
-
         </div>
     );
 }
