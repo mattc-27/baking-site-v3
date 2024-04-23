@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation, Link } from 'react-router-dom';
 import { IngredientsTable } from '../../components/IngredientsTable';
 import { IngredientsMiniTable } from '../../components/IngredientsMiniTable';
 const LazyImage = lazy(() => import('../tests/LazyImage'))
@@ -56,6 +56,31 @@ export function RecipeView() {
         console.log(recipeMini)
     }, [recipeMini, setRecipeMini])
 
+
+    function Breadcrumbs() {
+        const location = useLocation();
+
+        return (
+            <nav className='breadcrumbs-nav'>
+
+                <div className='breadcrumb'>
+                    <Link
+                        to={`/recipes`}
+                        className={location.pathname === `/recipes` ? "breadcrumb-active" : "breadcrumb-not-active"}
+                    >Recipes</Link>
+                    <span className="breadcrumb-arrow">&#x2215;</span>
+
+                    <Link
+                        to={`/recipes/view/${currentRecipe.id}`}
+                        className={location.pathname === `/recipes/view/${currentRecipe.id}` ? "breadcrumb-active" : "breadcrumb-not-active"}
+                    >{currentRecipe.title}</Link>
+                    <span className="breadcrumb-arrow">&#x2215;</span>
+                </div>
+
+            </nav>
+        )
+    }
+
     function Loading() {
         return (
             <div className='loading' style={{ fontFamily: 'Lato', fontSize: '1.5em', fontWeight: '300' }}>
@@ -69,11 +94,19 @@ export function RecipeView() {
 
             {currentRecipe &&
                 <div className='recipe-container'>
+
                     <div className='recipe-content-top'>
+
                         <div className='recipe-page-title'>
                             <h1>{currentRecipe.title}</h1>
                         </div>
+                    
+                            <Breadcrumbs />
+                      
                     </div>
+
+
+
                     <div className='recipe-content'>
                         {currentRecipe && ingredients &&
                             <>

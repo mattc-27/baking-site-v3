@@ -11,14 +11,14 @@ export function IngredientsTable({ ingredients }) {
     return (
         <table className='recipe-table' >
 
-            <div className='recipe-page-sub-title'>
+            <div className='ingredients-section-title'>
                 <h3>Ingredients</h3>
             </div>
             <tbody className='recipe-table-body'>
                 <tr className='row-th' >
                     <th className='row-th-lg'> Ingredient</th>
-                    <th className='row-th-lg'>Amount</th>
-                    <th className='row-th-lg'>Unit</th>
+                    <th className='row-th-md'>Amount</th>
+                    <th className='row-th-md'>Unit</th>
                 </tr>
                 {ingredients.map((item) => (
                     <tr className='row-td' /*  key={ing.id}*/  >

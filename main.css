@@ -1,0 +1,563 @@
+/* ---
+
+Form styles
+---- */
+.app-content-container {
+
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.component-title,
+.view-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 1%;
+    background-color: #fafafa;
+}
+
+.component-title h2,
+.view-title h2 {
+    font-size: 4em;
+    font-weight: 500;
+    font-family: 'Cabin';
+    background: transparent;
+    width: 100%;
+
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: flex-start;
+    margin: 1%;
+    width: 90%;
+    height: 100%;
+    /* flex-basis: 90%; */
+    overflow-y: scroll;
+    background: transparent;
+}
+.main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    max-width: 99%;
+    background: transparent;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    background: transparent;
+}
+
+.ingredient-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 98%;
+    background: transparent;
+    border: 1px solid #252525;
+    font-family: 'DM Sans', sans-serif;
+    margin: 0.5%;
+}
+
+.ing-container {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+    width: 100%;
+}
+
+.ingredient-form input {
+    height: auto;
+    font-size: 1.25em;
+    font-weight: 300;
+
+}
+
+.form-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 50%;
+    margin: 0.5%;
+    height: auto;
+    background-color: #fafafa;
+    align-items: flex-end;
+    height: 100%;
+    background: transparent;
+}
+
+.recipe-input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 50%;
+    max-width: 100%;
+    margin: 1% 0%;
+    background: transparent;
+}
+
+.recipe-input {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 3em;
+    flex-grow: 1;
+    margin: 0.5%;
+    background-color: #fff;
+    font-size: 1em;
+    padding: 0.5%;
+    min-width: none;
+    max-width: 100%;
+    width: 100%;
+    border: 0.5px solid #dbdbdb;
+}
+
+.recipe-input option {
+    border: 0.5px solid #dbdbdb;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.recipe-input-group label {
+    width: 200px;
+    margin: 0.5%;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* - 
+
+- */
+
+.animated-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.animated-section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 105vh;
+}
+
+.animated-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+}
+
+.parallax-title {
+    height: 100%;
+}
+
+.parallax-title-sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.parallax-title-sub h1 {
+    color: #fff;
+    font-size: 10em;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    text-wrap: wrap;
+}
+
+.parallax-section {
+    height: auto;
+}
+
+.parallax-step-half {
+    height: 50vh;
+}
+
+.parallax-step {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+    min-height: 125vh;
+}
+
+.parallax-step-title {
+    margin: 1%;
+    height: 100%;
+    width: auto;
+    max-height: 20%;
+}
+
+.parallax-item-title {
+    font-size: 4em;
+    height: 100%;
+}
+
+.parallax-item-title h1 {
+    font-size: 5em;
+}
+
+.parallax-item-3 {
+    font-size: 3em;
+    color: #fafafa;
+    background-color: #0e0d0d52;
+    background-blend-mode: blur(10px);
+    max-width: 98%;
+    margin: 0.5%;
+}
+
+.parallax-step-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 1% 0;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    border: 1px solid;
+    padding: 0.5%;
+    margin: 1%;
+    color: #fafafa;
+}
+
+.parallax-list {
+    font-size: 3em;
+    font-family: 'DM Sans';
+    line-height: 2;
+    font-weight: 500;
+    max-width: 90%;
+    width: 100%;
+    align-self: flex-start;
+    color: #fafafa;
+}
+
+.parallax-li {
+    font-size: 3em;
+    font-family: 'DM Sans';
+    line-height: 1.5;
+    font-weight: 500;
+    max-width: 90%;
+    width: 100%;
+    align-self: flex-start;
+    color: #fafafa;
+}
+
+.parallax-li-dark {
+    line-height: 2;
+    list-style-type: disc;
+    font-size: 3em;
+    font-family: 'DM Sans';
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: 90%;
+    width: 100%;
+    align-self: flex-start;
+    color: #252525;
+}
+
+.parallax-li-dark li {
+    line-height: 2;
+    list-style-type: circle;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.parallax-item-3-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+    height: 100%;
+    font-size: 2em;
+    margin: 2% 0%;
+    color: #252525;
+}
+
+.parallax-item-3-dark h1 {
+    text-align: left;
+    font-size: 3em;
+    width: 100%;
+    max-width: 99%;
+}
+
+.parallax-list-dark {
+    font-size: 3em;
+    font-family: 'DM Sans';
+    line-height: 1.5;
+    font-weight: 500;
+    max-width: 90%;
+    width: 100%;
+    align-self: center;
+    color: #252525;
+}
+
+.parallax-item-3-dark p {
+    font-size: 2.5em;
+    font-family: 'DM Sans';
+    font-weight: 300;
+    max-width: 90%;
+    line-height: 2;
+}
+
+.list-card ul {
+    font-size: 1em;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+
+.list-card ul li {
+    margin: 1% 0%;
+}
+
+.list-card-img {
+    max-width: 60%;
+    position: relative;
+    right: -20%;
+}
+
+.parallax-step-img-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.parallax-step-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: 2% 0.5%;
+}
+
+.list-card-img-center {
+    max-width: 60%;
+    align-self: center;
+    width: 100%;
+    right: 0%;
+}
+
+.parallax-list-text-1 {
+    font-size: 6em;
+    font-family: 'DM Sans';
+    line-height: 2.5;
+    font-weight: 300;
+    max-width: 80%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+}
+
+.parallax-list-text-2 {
+    font-size: 5em;
+    font-family: 'DM Sans';
+    line-height: 2;
+    font-weight: 300;
+    max-width: 98%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+}
+
+.parallax-item-4-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    font-size: 3em;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    width: 100%;
+    max-width: 98%;
+    text-align: right;
+    color: #252525;
+}
+
+.parallax-item-5 {
+    font-family: 'DM Sans';
+    max-width: 92%;
+    width: 100%;
+    font-size: 3.5em;
+    align-self: center;
+    text-align: center;
+    color: #fafafa;
+    background-color: #051b294d;
+    background-blend-mode: blur(10px);
+    border: 0.5px solid #61666a11;
+}
+
+.parallax-item-6 {
+    font-family: 'DM Sans';
+    max-width: 92%;
+    width: 100%;
+    font-size: 3.5em;
+    align-self: center;
+    text-align: center;
+    color: #252525;
+}
+
+.parallax-item-5 h1 {
+    font-weight: 400;
+    line-height: 2;
+}
+
+.parallax-down h1,
+.parallax-down {
+    width: 80%;
+    text-align: center;
+    line-height: 2;
+    height: 100%;
+}
+
+
+/* Article, blog */
+.article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 10%;
+
+}
+
+.article-title {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 2em;
+    margin: 2% 0%;
+}
+
+.article-title h1 {
+    width: 100%;
+    max-width: 98%;
+    height: auto;
+    text-align: left;
+    font-size: 2em;
+    font-family: "Cormorant Garamond", serif;
+    margin: 1% 0%;
+}
+
+.article-title p {
+    text-align: left;
+
+    max-width: 90%;
+    font-size: 0.8em;
+    margin: 1% 0%;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    max-width: 98%;
+}
+
+.article-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 99%;
+    margin: 2% 1%;
+}
+
+.sub-title {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    font-size: 2em;
+    margin: 0.5% 0%;
+}
+
+.sub-title h3 {
+    width: 100%;
+    height: auto;
+    align-self: flex-end;
+    text-align: left;
+    font-size: 1.5em;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.article-body p {
+    width: 100%;
+    max-width: 92%;
+    height: auto;
+    text-align: left;
+    font-size: 2em;
+    line-height: 2;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.article-body ol {
+    width: 100%;
+    max-width: 92%;
+    height: auto;
+    text-align: left;
+    list-style-position: inside;
+    font-size: 1em;
+    line-height: 2;
+    font-family: "Cormorant Garamond", serif;
+}
+

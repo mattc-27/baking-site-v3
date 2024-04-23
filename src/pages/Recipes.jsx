@@ -29,6 +29,7 @@ export default function Recipes() {
   }, [])
 
 
+
   return (
     <div className='recipe-page' style={{maxHeight: '110vh'}} >
       {defaultRecipes &&

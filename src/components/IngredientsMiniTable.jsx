@@ -13,16 +13,16 @@ export function IngredientsMiniTable({ data }) {
     return (
         <>
             <div className='sub-recipe-col'>
-          
+
                 <table className='sub-recipe-table' >
-                <div className='sub-recipe-title'>
-                    <h3>{data.sub_recipe_title}</h3>
-                </div>
+                    <div className='sub-recipe-title'>
+                        <h3>{data.sub_recipe_title}</h3>
+                    </div>
                     <tbody className='sub-recipe-table-body'>
                         <tr className='row-th' >
                             <th className='row-th-lg'> Ingredient</th>
-                            <th className='row-th-lg'> Amount</th>
-                            <th className='row-th-lg'> Unit</th>
+                            <th className='row-th-md'>Amount</th>
+                            <th className='row-th-md'>Unit</th>
                         </tr>
                         {data.sub_ingredients.map((item) => (
                             <tr className='row-td' /*  key={ing.id}*/  >
@@ -31,7 +31,7 @@ export function IngredientsMiniTable({ data }) {
                                     {item.quantity}
                                 </td>
                                 <td className='row-sm'>
-                                    {`${formatQuantity(item.quantity, item.unit)}`} 
+                                    {`${formatQuantity(item.quantity, item.unit)}`}
                                     {/*  {`${formatQuantity(ing.quantity, ing.unit)}`} */}
                                 </td>
                             </tr>

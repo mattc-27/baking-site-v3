@@ -89,13 +89,13 @@ const fetchRecipeDetailed = async (req, res) => {
 
     // Fetch ingredients for main recipe
     const lookupIng = await pool.query(
-        `select name as ingredient_name, quantity, unit from ingredients where recipe_id = $1`, [recipe_id]
+        `select id, name as ingredient_name, quantity, unit from ingredients where recipe_id = $1 order by id asc`, [recipe_id]
     )
     const ingredients = lookupIng.rows;
 
     // Fetch instructions for main recipe
     const lookupInst = await pool.query(
-        `select id, step, instruction from instructions where recipe_id = $1`, [recipe_id]
+        `select id, step, instruction from instructions where recipe_id = $1 order by step asc`, [recipe_id]
     )
     const instructions = lookupInst.rows;
 
