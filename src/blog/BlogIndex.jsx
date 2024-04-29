@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { Welcome } from '../components/Welcome';
 import { recipeShort } from '../data/recipeShort';
 import { getRandomItem } from '../services/scripts';
 import { RecipeSection } from '../components/RecipeSection';
-export default function Home() {
+export default function BlogIndex() {
 
   const [defaultRecipes, setDefaultRecipes] = useState('')
 
@@ -48,7 +47,7 @@ export default function Home() {
     };
 
     return (
-      <Parallax className='carousel'  translateY={[5,-5]}>
+      <div className='carousel'>
       <div className="recipe-card">
         <div className='recipe-card-content'>
           <img
@@ -56,12 +55,19 @@ export default function Home() {
             key={currentIndex}
             src={recipes[currentIndex].image}
           />
-    
+          <div
+            className='recipe-card-top'
+          //speed={15}
+          >
             <div
               className='recipe-card-title'
             >
               <h1>{recipes[currentIndex].title}</h1>
             </div>
+
+
+          </div>
+
         </div>
 
 
@@ -99,13 +105,13 @@ export default function Home() {
         ))}
       </div>
       </div>
-      </Parallax>
+      </div>
     );
   }
 
 
   return (
-    <div className='welcome-page' >
+    <div className='recipe-page' >
       <Welcome />
       {defaultRecipes &&
         <>

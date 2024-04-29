@@ -37,10 +37,12 @@ app.use(cookieParser())
 
 
 // Serve static file
-/* 
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/dist/index.html'));
-});*/
+});
+
+
 
 const recipeRoutes = require('./recipes');
 app.use(`/api/recipes`, recipeRoutes);

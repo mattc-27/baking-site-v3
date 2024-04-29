@@ -5,7 +5,7 @@ import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 const LazyImage = lazy(() => import('../tests/LazyImage'))
 
-export function RecipeListCard({ item, recipe_id }) {
+export function ArticleCard({ item, id }) {
 
     function Loading() {
         return (
@@ -16,23 +16,36 @@ export function RecipeListCard({ item, recipe_id }) {
     }
 
     return (
-        <>
-            <div className='recipe-card-img-main'>
+        <div
+            className='article-card-main'
+
+        >
+         {/*    <Parallax
+                className='article-card-img-main'
+            //speed={5}
+            >
                 <Suspense fallback={<Loading />}>
                     <LazyImage image={item.image} />
                 </Suspense>
-            </div>
-            <div className='recipe-card-info-main'>
-                <div className='recipe-card-title-main'>
+
+                 <img src={item.image} />
+            </Parallax>*/}
+            <div
+                className='article-card-top-main'
+            //speed={15}
+            >
+                <div
+                    className='article-card-title-main'
+                >
                     <h1>{item.title}</h1>
                     <Link
-                        className='recipe-card-link-main'
-                        to={`/recipes/view/${recipe_id}`}
-                        state={{ recipe: item }}
-                    >View recipe
+                        className='article-card-link-main'
+                        to={`/blog/articles/view`}
+                    
+                    >View article
                     </Link>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

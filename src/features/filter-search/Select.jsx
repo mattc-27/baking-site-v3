@@ -13,3 +13,22 @@ export function Select({ value, name, onChange, selectLabel, data }) {
         </div>
     )
 }
+
+
+export function Checkbox({ data }) {
+
+    return (
+        <div className='filter-select'>
+            <label>{data.name}</label>
+            <input 
+            type='checkbox'
+            className='filter-option' 
+        
+       
+            />
+            {/*         {data.map((option) => (
+                    <option key={option.value} value={option.value} >{option.name}</option>
+                ))} */}
+        </div>
+    )
+}

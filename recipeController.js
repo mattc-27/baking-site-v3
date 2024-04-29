@@ -99,6 +99,12 @@ const fetchRecipeDetailed = async (req, res) => {
     )
     const instructions = lookupInst.rows;
 
+      // Fetch instructions for main recipe
+      const lookupImages = await pool.query(
+        `select image from recipe_images where recipe_id = $1`, [recipe_id]
+    )
+    const images = lookupImages.rows;
+
     const recipeOptions = await pool.query(
         `SELECT
         sr.id AS sub_recipe_id,
@@ -118,7 +124,8 @@ const fetchRecipeDetailed = async (req, res) => {
          mainRecipe, ingredients, instructions,
         /*       ingredients,
         instructions}, */
-        options: recipeOptions.rows
+        options: recipeOptions.rows,
+        images 
     });
     } catch (error) {
         console.group(error)

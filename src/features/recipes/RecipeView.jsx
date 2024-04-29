@@ -18,6 +18,7 @@ export function RecipeView() {
     const [instructions, setInstructions] = useState(
         ''
     );
+    const [images, setImages] = useState('');
     const [recipeMini, setRecipeMini] = useState('')
     const [addlIng, setAddlIng] = useState('')
 
@@ -27,12 +28,14 @@ export function RecipeView() {
             try {
                 const recipe = await fetch(`/api/recipes/recipe_detailed/${recipe_id}`)
                 const data = await recipe.json()
-                console.log(data)
+
 
                 if (data.success) {
 
                     setCurrentRecipe(data.mainRecipe)
-
+                    if (data.images === undefined) {
+                        setImages(currentRecipe.image)
+                    } else setImages(data.images)
                     setIngredients(data.ingredients)
                     setInstructions(data.instructions)
                     if (data.options.length > 0) {
@@ -62,21 +65,18 @@ export function RecipeView() {
 
         return (
             <nav className='breadcrumbs-nav'>
-
                 <div className='breadcrumb'>
                     <Link
                         to={`/recipes`}
                         className={location.pathname === `/recipes` ? "breadcrumb-active" : "breadcrumb-not-active"}
                     >Recipes</Link>
                     <span className="breadcrumb-arrow">&#x2215;</span>
-
                     <Link
                         to={`/recipes/view/${currentRecipe.id}`}
                         className={location.pathname === `/recipes/view/${currentRecipe.id}` ? "breadcrumb-active" : "breadcrumb-not-active"}
                     >{currentRecipe.title}</Link>
                     <span className="breadcrumb-arrow">&#x2215;</span>
                 </div>
-
             </nav>
         )
     }
@@ -100,22 +100,23 @@ export function RecipeView() {
                         <div className='recipe-page-title'>
                             <h1>{currentRecipe.title}</h1>
                         </div>
-                    
-                            <Breadcrumbs />
-                      
+
+                        <Breadcrumbs />
+
                     </div>
 
 
 
                     <div className='recipe-content'>
-                        {currentRecipe && ingredients &&
+                        {currentRecipe && images && ingredients &&
                             <>
                                 <div className='ing-section'>
                                     <IngredientsTable ingredients={ingredients} />
-
                                     <div className='image-side'>
                                         <Suspense fallback={<Loading />}>
-                                            <LazyImage image={currentRecipe.image} />
+                                            <LazyImage image={images.length <= 1 ?
+                                                currentRecipe.image
+                                                : images[1].image} />
                                         </Suspense>
                                     </div>
                                 </div>
@@ -128,15 +129,25 @@ export function RecipeView() {
                                 </div>
                                 {instructions ?
                                     <div className='instructions-section'>
+
                                         <div className='instructions-section-title'>
                                             <h2>Instructions</h2>
                                         </div>
-                                        <div className='recipe-instructions'>
-                                            <ol style={{ width: '100%' }}>
-                                                {instructions.map(item => (
-                                                    <li key={item.step}>{item.instruction}</li>
-                                                ))}
-                                            </ol>
+                                        <div className='instructions-section-content'>
+                                            <div className='recipe-instructions'>
+                                                <ol style={{ width: '100%' }}>
+                                                    {instructions.map(item => (
+                                                        <li key={item.step}>{item.instruction}</li>
+                                                    ))}
+                                                </ol>
+                                            </div>
+                                            <div className='image-side-b'>
+                                                <Suspense fallback={<Loading />}>
+                                                    <LazyImage image={images.length <= 1 ?
+                                                        currentRecipe.image
+                                                        : images[1].image} />
+                                                </Suspense>
+                                            </div>
                                         </div>
                                     </div>
                                     : null}

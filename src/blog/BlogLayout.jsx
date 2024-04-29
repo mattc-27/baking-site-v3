@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 
-import logo1 from './assets/logo1.png'
-import GithubLogo from './assets/GithubLogo.png';
+import logo1 from '../assets/logo1.png'
+import GithubLogo from '../assets/GithubLogo.png';
 
-export function Layout() {
+export function BlogLayout() {
 
     const location = useLocation();
 
@@ -48,9 +48,6 @@ export function Layout() {
               <Link to={'/recipes'}
                className={isSolidBackground ? 'nav-link light-text' : 'nav-link dark-text'} 
                >Recipes </Link>
-                  <Link to={'/blog'}
-               className={isSolidBackground ? 'nav-link light-text' : 'nav-link dark-text'} 
-               >Blog </Link>
                       
                     </div>
                 </div>

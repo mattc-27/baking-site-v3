@@ -7,15 +7,12 @@ export function RecipeCard({ item, recipe_id }) {
    
     return (
 
-        <ParallaxBanner
-            translateY={[
-                '50%',
-                '-50%'
-            ]}
+        <Parallax
+          speed={25}
 
             className='recipe-card'
         >
-            <Parallax className='recipe-card-content'
+            <div className='recipe-card-content'
 
             >
                 <Parallax
@@ -40,8 +37,8 @@ export function RecipeCard({ item, recipe_id }) {
                         </Link>
                     </div>
                 </div>
-            </Parallax>
-        </ParallaxBanner>
+            </div>
+        </Parallax>
 
     );
 }

@@ -4,11 +4,9 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 
 // Components 
-import { SelectCategory } from '../filter-search/CategorySelect';
-import { RecipeListCard } from './RecipeListCard';
+import { ArticleCard } from './ArticleCard';
 
-
-export function RecipeList({ data }) {
+export function ArticleList({ data }) {
 
   const [query, setQuery] = useState('');
   const [filteredItems, setFilteredItems] = useState(data);
@@ -17,6 +15,7 @@ export function RecipeList({ data }) {
   const [defaultRecipes, setDefaultRecipes] = useState(data);
 
 
+/* ----- 
 
   useEffect(() => {
     console.log(query);
@@ -30,7 +29,7 @@ export function RecipeList({ data }) {
 
 
 
-  /* ----- 
+  
   TESTS
 
   useEffect(() => {
@@ -70,25 +69,17 @@ useEffect(() => {
     <>
       <div className='recipe-page-top'>
         <div className='recipe-collection-title'>
-          <h1>Recipe Collection</h1>
+          <h1>Article Collection</h1>
         </div>
-        <SelectCategory setQuery={setQuery} />
+       {/*  <SelectCategory setQuery={setQuery} /> */}
       </div>
-      <ParallaxBanner className="recipe-collection" speed={-5}>
-        {filteredItems &&
-          filteredItems.map((recipe) => (
-            <Parallax
-              className='recipe-card-main'
-              translateY={[10, 10]}
-              scale={[0.5, 1]}
-              opacity={[1,0.9]}
-              >
-
-              <RecipeListCard item={recipe} recipe_id={recipe.id} />
-            </Parallax>))
-
+      <div className="article-collection">
+        {defaultRecipes &&
+          defaultRecipes.map((article) => (
+            <ArticleCard item={article} id={article.id} />
+          ))
         }
-      </ParallaxBanner>
+      </div>
     </>
   );
 }
